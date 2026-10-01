@@ -1,17 +1,4 @@
-# EXPRESSLOGISTICS – SISTEMA DE GESTIÓN DE ENVÍOS
-
-## Proyecto de Programación – Grupo 7
-
----
-
-## 1. Integrantes
-
-| N.º | Integrante | Aporte al proyecto |
-|---|---|---|
-| 1 | **Francis Bonifaz** | Análisis del problema, algoritmo y documentación. |
-| 2 | **Sebastian Navas** | Desarrollo de la estructura principal del programa en Java. |
-| 3 | **David Punina** | Implementación de tarifas, validaciones y servicio Express. |
-| 4 | **Dixon Prado** | Pruebas, contador, acumulador y cálculo del paquete más pesado. |
+| Pruebas, contador, acumulador y cálculo del paquete más pesado. |
 
 ---
 
@@ -57,5 +44,36 @@ Para ejecutar correctamente el programa se deben seguir los siguientes pasos:
 3. Verificar que Java se encuentre instalado y configurado.
 4. Abrir el archivo:
 
+### Caso de prueba 2 – Varios envíos
+
+**Entrada:**
+
 ```text
-ExpressLogistics.java
+Cantidad de envíos: 3
+
+Guía: G001
+Peso: 2 kg
+Zona: 1
+Express: No
+
+Guía: G002
+Peso: 7 kg
+Zona: 2
+Express: Si
+
+Guía: G003
+Peso: 10 kg
+Zona: 3
+Express: No
+
+Envíos registrados correctamente.
+Cantidad de envíos Express: 1
+Paquete más pesado: 10 kg
+Total facturado: [valor calculado]
+Cantidad de envíos: 2
+
+Guía: G001
+Peso: 12 kg
+Peso inválido.
+No se permiten paquetes mayores a 10 kg.
+Se solicita nuevamente el peso.
