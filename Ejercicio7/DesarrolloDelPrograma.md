@@ -18,6 +18,38 @@ Además, el programa procesará una cantidad N de envíos y llevará un control 
 | Tipo de servicio: Express o normal | Contar los envíos Express | |
 | | Comparar los pesos para encontrar el paquete más pesado | |
 
+# ALGORITMO – EXPRESSLOGISTICS
+
+**Inicio**
+
+1. Solicitar la cantidad de envíos que se desean registrar.
+2. Validar que la cantidad sea mayor que 0.
+3. Inicializar:
+
+   * `totalFacturado = 0`
+   * `cantidadExpress = 0`
+   * `paqueteMasPesado = 0`
+4. Repetir el proceso para cada envío:
+
+   * Solicitar el número de guía.
+   * Solicitar el peso del paquete.
+   * Validar que el peso sea mayor que 0 y menor o igual a 10 kg.
+   * Solicitar la zona del envío.
+   * Validar que la zona sea 1, 2 o 3.
+   * Utilizar `switch` para determinar la tarifa de acuerdo con la zona.
+   * Preguntar si el envío es Express.
+   * Si es Express, aplicar el recargo y aumentar el contador de envíos Express.
+   * Sumar el valor del envío al total facturado.
+   * Comparar el peso con el paquete más pesado registrado.
+   * Si el peso actual es mayor, actualizar el paquete más pesado.
+5. Mostrar el total facturado.
+6. Mostrar la cantidad de envíos Express.
+7. Mostrar el peso del paquete más pesado.
+8. Mostrar un mensaje indicando que el proceso terminó correctamente.
+
+**Fin**
+
+
 ## Pseudocódigo 
 
 ```
