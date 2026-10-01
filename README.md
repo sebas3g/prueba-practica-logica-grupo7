@@ -4,7 +4,7 @@
 
 - Sebastian Navas
 - Francis Bonifaz
-- David Puniña
+- David Punina
 - Dixon Padro
 
 ## Actividades de cada integrante
