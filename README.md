@@ -13,21 +13,25 @@
 - Desarrollo de la estructura principal del programa.
 - Implementación del ingreso de datos con `Scanner`.
 - Registro de los envíos y cantidad de envíos a procesar.
+- Algoritmo
 
 ### Francis Bonifaz
 - Implementación del menú y selección de la zona mediante `switch`.
 - Desarrollo del cálculo de las tarifas según la zona.
 - Apoyo en las pruebas del programa.
+- Pseudocódigo y diagrama de Flujo
 
 ### David Puniña
 - Implementación de las validaciones de datos.
 - Validación del peso máximo de 10 kg.
 - Implementación del recargo para los envíos Express.
+-  Análisis, Datos de entrada, procesos, salidas
 
 ### Dixon Padro
 - Implementación de contadores y acumuladores.
 - Cálculo del total facturado, cantidad de envíos Express y paquete más pesado.
 - Revisión y corrección de errores del programa.
+- Prueba de escritorio
 
 ## Ejercicio asignado
 
@@ -64,7 +68,7 @@ Al finalizar, se muestran:
 
 ## Casos de prueba
 
-### Caso de prueba 1 – Envío Local
+### Caso 1: Envío local Express
 
 **Entrada:**
 
@@ -74,3 +78,64 @@ Guía: G001
 Peso: 5 kg
 Zona: 1
 Express: Si
+```
+
+**Resultado esperado:**
+
+```text
+Envío registrado correctamente.
+Cantidad de envíos Express: 1
+Paquete más pesado: 5 kg
+Total facturado: [valor calculado]
+```
+
+### Caso 2: Varios envíos
+
+**Entrada:**
+
+```text
+Cantidad de envíos: 3
+
+Guía: G001
+Peso: 2 kg
+Zona: 1
+Express: No
+
+Guía: G002
+Peso: 7 kg
+Zona: 2
+Express: Si
+
+Guía: G003
+Peso: 10 kg
+Zona: 3
+Express: No
+```
+
+**Resultado esperado:**
+
+```text
+Envíos registrados correctamente.
+Cantidad de envíos Express: 1
+Paquete más pesado: 10 kg
+Total facturado: [valor calculado]
+```
+
+### Caso 3: Peso inválido
+
+**Entrada:**
+
+```text
+Cantidad de envíos: 1
+Guía: G003
+Peso: 12 kg
+```
+
+**Resultado esperado:**
+
+```text
+Peso inválido.
+No se permiten paquetes mayores a 10 kg.
+Se solicita nuevamente el peso.
+```
+
