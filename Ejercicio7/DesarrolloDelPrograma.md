@@ -178,3 +178,36 @@ FinAlgoritmo
 
 
 <img width="1773" height="2980" alt="Diagrama_Flujo_ExpressLogistics_Grupo7" src="https://github.com/user-attachments/assets/e3cf90b1-dcd3-450d-9212-b32194a53181" />
+
+
+# PRUEBAS DE ESCRITORIO
+
+
+#### Caso de Prueba 1: 2 Envíos Válidos
+
+| Paso | Guía Procesada | Peso | Tarifa Base | Recargo Express (30%) | Total del Envío | Total Facturado (Acumulador) | Cantidad Express (Contador) | Paquete Más Pesado (Máximo) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Envío 1** | `G-001` | `4.5 kg` | `$8.00` | `$2.40` | `$10.40` | `$10.40` | `1` | `4.5 kg` |
+| **Envío 2** | `G-002` | `8.0 kg` | `$12.00` | `$0.00` | `$12.00` | `$22.40` | `1` | `8.0 kg` |
+
+---
+
+#### Caso de Prueba 2: Valor Límite
+
+
+| Paso | Guía Procesada | Peso | Tarifa Base | Recargo Express (30%) | Total del Envío | Total Facturado (Acumulador) | Cantidad Express (Contador) | Paquete Más Pesado (Máximo) | Observación de Lógica |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Inicio** | — | — | — | — | — | `$0.00` | `0` | `0.0 kg` | Estado inicial |
+| **Envío 1** | `G-100` | `10.0 kg` | `$5.00` | `$0.00` | `$5.00` | `$5.00` | `0` | `10.0 kg` | `10.0 > 0.0` → Asigna primer máximo |
+| **Envío 2** | `G-101` | `10.0 kg` | `$5.00` | `$1.50` | `$6.50` | `$11.50` | `1` | `10.0 kg` | `10.0 > 10.0` (Falso) → Mantiene el valor actual |
+
+---
+
+#### Caso de Prueba 3: Datos Inválidos y Reintentos
+
+| Paso / Intento | Variable Evaluada | Valor Ingresado | ¿Es Válido? | Acción / Mensaje del Sistema | Total Facturado | Cantidad Express | Paquete Más Pesado |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Validación Envíos** | `cantidadEnvios` | `-1` / `0` | ❌ No ($\le 0$) | Muestra error y repite ciclo `do-while` | `$0.00` | `0` | `0.0 kg` |
+| **Intento 1** | `peso` | `15.0 kg` | ❌ No ($> 10$) | Muestra error y repite ciclo `do-while` | `$0.00` | `0` | `0.0 kg` |
+| **Intento 2** | `zona` | `5` | ❌ No ($< 1$ o $> 3$) | Muestra error y repite ciclo `do-while` | `$0.00` | `0` | `0.0 kg` |
+| **Intento 3** | Todas | Válidos (`6.0`, `1`, `si`) | ✅ **Sí** | Procesa cobro ($5.00 + $1.50 = $6.50) | `$6.50` | `1` | `6.0 kg` |
